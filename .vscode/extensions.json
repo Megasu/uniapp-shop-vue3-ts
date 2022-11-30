@@ -1,0 +1,12 @@
+{
+  // 推荐的扩展插件
+  "recommendations": [
+    "mrmaoddxxaa.create-uniapp-view", // 创建 uni-app 页面
+    "uni-helper.uni-helper-vscode", // uni-app 代码提示
+    "evils.uniapp-vscode", // uni-app 文档
+    "vue.volar", // vue3 语法支持
+    "vue.vscode-typescript-vue-plugin", // vue3 ts 插件
+    "dbaeumer.vscode-eslint", // eslint
+    "esbenp.prettier-vscode" // prettier
+  ]
+}

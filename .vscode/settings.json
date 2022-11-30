@@ -1,0 +1,13 @@
+{
+  // 在保存时格式化文件
+  "editor.formatOnSave": true,
+  // 文件格式化配置
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // 配置语言的文件关联
+  "files.associations": {
+    "pages.json": "jsonc", // pages.json 可以写注释
+    "manifest.json": "jsonc" // manifest.json 可以写注释
+  }
+}
