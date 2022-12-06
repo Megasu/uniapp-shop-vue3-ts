@@ -21,7 +21,7 @@
     }
   },
   "vueCompilerOptions": {
-    "experimentalRuntimeMode": "runtime-uni-app"
+    "nativeTags": ["block", "component", "template", "slot"]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }
