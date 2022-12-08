@@ -26,4 +26,7 @@ export const useMemberStore = defineStore(
     }
   },
   // TODO: 持久化
+  {
+    persist: true,
+  },
 )
