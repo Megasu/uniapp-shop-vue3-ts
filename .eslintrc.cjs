@@ -15,6 +15,7 @@ module.exports = {
     wx: true,
     WechatMiniprogram: true,
     getCurrentPages: true,
+    UniApp: true,
   },
   parserOptions: {
     ecmaVersion: 'latest',
