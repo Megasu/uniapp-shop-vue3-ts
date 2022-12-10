@@ -13,7 +13,8 @@
     "types": [
       "@dcloudio/types",
       "@types/wechat-miniprogram",
-      "@uni-helper/uni-app-types"
+      "@uni-helper/uni-app-types",
+      "@uni-helper/uni-ui-types"
     ],
     "baseUrl": ".",
     "paths": {
@@ -23,5 +24,10 @@
   "vueCompilerOptions": {
     "nativeTags": ["block", "component", "template", "slot"]
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue"
+  ]
 }
