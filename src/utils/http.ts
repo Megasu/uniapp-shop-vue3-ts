@@ -36,8 +36,43 @@ const httpInterceptor = {
     if (token) {
       options.header.Authorization = token
     }
-    console.log(options)
   },
 }
 uni.addInterceptor('request', httpInterceptor)
 uni.addInterceptor('uploadFile', httpInterceptor)
+
+/**
+ * 请求函数
+ * @param  UniApp.RequestOptions
+ * @returns Promise
+ *  1. 返回 Promise 对象
+ *  2. 请求成功
+ *    2.1 提取核心数据 res.data
+ *    2.2 添加类型，支持泛型
+ *  3. 请求失败
+ *    3.1 网络错误 -> 提示用户换网络
+ *    3.2 401错误  -> 清理用户信息，跳转到登录页
+ *    3.3 其他错误 -> 根据后端错误信息轻提示
+ */
+interface Data<T> {
+  code: string
+  msg: string
+  result: T
+}
+// 2.2 添加类型，支持泛型
+export const http = <T>(options: UniApp.RequestOptions) => {
+  // 1. 返回 Promise 对象
+  return new Promise<Data<T>>((resolve, reject) => {
+    uni.request({
+      ...options,
+      // 2. 请求成功
+      success(res) {
+        // 2.1 提取核心数据 res.data
+        resolve(res.data as Data<T>)
+      },
+      fail(err) {
+        reject(err)
+      },
+    })
+  })
+}
