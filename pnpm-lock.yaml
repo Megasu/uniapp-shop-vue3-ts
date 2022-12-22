@@ -27,6 +27,7 @@ specifiers:
   '@vitejs/plugin-vue': ^3.0.3
   '@vue/eslint-config-prettier': ^7.0.0
   '@vue/eslint-config-typescript': ^11.0.0
+  '@vue/runtime-core': ^3.2.45
   '@vue/tsconfig': ^0.1.3
   eslint: ^8.22.0
   eslint-plugin-vue: ^9.3.0
@@ -74,6 +75,7 @@ devDependencies:
   '@vitejs/plugin-vue': 3.2.0_vite@3.2.4+vue@3.2.45
   '@vue/eslint-config-prettier': 7.0.0_5qrnzwqb344w6up62gv3safeoi
   '@vue/eslint-config-typescript': 11.0.2_5ma4o5namqj2syekqcvrgakwe4
+  '@vue/runtime-core': 3.2.45
   '@vue/tsconfig': 0.1.3_@types+node@18.11.10
   eslint: 8.28.0
   eslint-plugin-vue: 9.8.0_eslint@8.28.0
