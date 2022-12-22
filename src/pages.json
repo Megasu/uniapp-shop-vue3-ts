@@ -31,6 +31,12 @@
       "style": {
         "navigationBarTitleText": "分类"
       }
+    },
+    {
+      "path": "pages/login/login",
+      "style": {
+        "navigationBarTitleText": "登录"
+      }
     }
   ],
   "globalStyle": {

@@ -7,10 +7,10 @@ const memberStore = useMemberStore()
 const getData = async () => {
   const res = await http<number[]>({
     method: 'GET',
-    url: '/home/banner',
+    url: '',
     header: {},
   })
-  console.log('获取成功', res.result)
+  console.log('获取数据成功', res.result)
 }
 </script>
 
