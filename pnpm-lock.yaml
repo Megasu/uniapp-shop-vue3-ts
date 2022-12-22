@@ -22,8 +22,8 @@ specifiers:
   '@rushstack/eslint-patch': ^1.1.4
   '@types/node': ^18.11.9
   '@types/wechat-miniprogram': ^3.4.1
-  '@uni-helper/uni-app-types': ^0.1.8
-  '@uni-helper/uni-ui-types': ^0.2.1
+  '@uni-helper/uni-app-types': 0.3.0
+  '@uni-helper/uni-ui-types': 0.3.0
   '@vitejs/plugin-vue': ^3.0.3
   '@vue/eslint-config-prettier': ^7.0.0
   '@vue/eslint-config-typescript': ^11.0.0
@@ -69,8 +69,8 @@ devDependencies:
   '@rushstack/eslint-patch': 1.2.0
   '@types/node': 18.11.10
   '@types/wechat-miniprogram': 3.4.1
-  '@uni-helper/uni-app-types': 0.1.8
-  '@uni-helper/uni-ui-types': 0.2.1
+  '@uni-helper/uni-app-types': 0.3.0_typescript@4.9.3
+  '@uni-helper/uni-ui-types': 0.3.0_o4lda3myscicrsxdy45rfrnmte
   '@vitejs/plugin-vue': 3.2.0_vite@3.2.4+vue@3.2.45
   '@vue/eslint-config-prettier': 7.0.0_5qrnzwqb344w6up62gv3safeoi
   '@vue/eslint-config-typescript': 11.0.2_5ma4o5namqj2syekqcvrgakwe4
@@ -372,6 +372,10 @@ packages:
 
   /@dcloudio/types/3.0.20:
     resolution: {integrity: sha512-rZ4okvj3LCN77rzZWtQg/uQLL4DPl72XjNdmRxTXgboGpBYuyjJ9V9do87RkHNM0bA0l0RIUoy3nh7P6Exb3hA==}
+
+  /@dcloudio/types/3.2.3:
+    resolution: {integrity: sha512-XnccbGXE0Lk9N3Vnaqs0Ugmra1dA+B9+7kN4ftgAF48xQMPrk7LdFdNuAHjHn/geh8VloPx8cUMGb/zqnQ0Ejg==}
+    dev: true
 
   /@dcloudio/uni-app-plus/3.0.0-alpha-3061120221205002_vite@3.2.4+vue@3.2.45:
     resolution: {integrity: sha512-7VGB1REcj+MRtpzl6vGiPm5RNO3/SdT3WEFxjlLCai8f8kvlmDYjYraGpNXg5WkwFRPsHI1eGWEuM/VzhhL3vA==}
@@ -1187,28 +1191,28 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@uni-helper/uni-app-types/0.1.8:
-    resolution: {integrity: sha512-JUoRsUyAbt8nZjviahXLwUxH8mmT5yLo2pcNIqAHOq5Oc7p7QvTXrjTXtqHQOFM4qNpsmTed56bRu0GPJUJIMg==}
-    engines: {node: '>=14.16'}
+  /@uni-helper/uni-app-types/0.3.0_typescript@4.9.3:
+    resolution: {integrity: sha512-uQ2xEaMFNUG1+TpkUyxmg6VZl0VaEYewkRenWeboZAVgjHPDcNIW7y7xUX1dUX7v2pYoIlP7DFBRQ2a5+sQjAw==}
+    engines: {node: '>=14.18'}
+    peerDependencies:
+      typescript: ^4.8.0
     dependencies:
-      '@dcloudio/types': 3.0.20
+      '@dcloudio/types': 3.2.3
+      typescript: 4.9.3
       vue3: /vue/3.2.45
     dev: true
 
-  /@uni-helper/uni-app-types/0.2.0:
-    resolution: {integrity: sha512-BY2mVfhnaeegjmLnpWBVErtQqICpWH0ZvOldbsto4ltW1mIcdx4P/LZ6bjml/VoGm69EKXRAjqz30TXRs667XA==}
-    engines: {node: '>=14.16'}
+  /@uni-helper/uni-ui-types/0.3.0_o4lda3myscicrsxdy45rfrnmte:
+    resolution: {integrity: sha512-tESonxnfi+YnR70ZWsQbxx90sDmqKrU5N8SS2T7nlXeifQg3ZSUMSFmAFegr8fWz+/2R59TNjS5AZA/LaM2pXw==}
+    engines: {node: '>=14.18'}
+    peerDependencies:
+      '@uni-helper/uni-app-types': ^0.3.0
+    peerDependenciesMeta:
+      '@uni-helper/uni-app-types':
+        optional: true
     dependencies:
-      '@dcloudio/types': 3.0.20
-      vue3: /vue/3.2.45
-    dev: true
-
-  /@uni-helper/uni-ui-types/0.2.1:
-    resolution: {integrity: sha512-ZsOMNqVjud6KDzufiv53tGgDa8pfkUc1pCfiWTEILX3usreqwSNyFob2UCUYwMlViqy7TUwjYv8MpakYnLCTcg==}
-    engines: {node: '>=14.16'}
-    dependencies:
-      '@dcloudio/types': 3.0.20
-      '@uni-helper/uni-app-types': 0.2.0
+      '@dcloudio/types': 3.2.3
+      '@uni-helper/uni-app-types': 0.3.0_typescript@4.9.3
       vue3: /vue/3.2.45
     dev: true
 
