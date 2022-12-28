@@ -8,6 +8,9 @@
     "jsx": "preserve",
     "sourceMap": true,
     "resolveJsonModule": true,
+    "isolatedModules": true,
+    "preserveValueImports": true,
+    "importsNotUsedAsValues": "error",
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
     "types": [
