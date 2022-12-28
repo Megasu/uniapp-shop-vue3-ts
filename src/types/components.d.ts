@@ -1,4 +1,4 @@
-import XtxSwiper from './XtxSwiper.vue'
+import XtxSwiper from '@/components/XtxSwiper.vue'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
