@@ -1,6 +1,4 @@
-/**
- * 首页-广告区域数据类型
- */
+/** 首页-广告区域数据类型 */
 export type BannerItem = {
   /** 跳转链接 */
   hrefUrl: string
