@@ -50,8 +50,8 @@ onLoad(() => {
         <navigator
           hover-class="none"
           class="navigator"
-          v-for="item in 10"
-          :key="item"
+          v-for="goods in 10"
+          :key="goods"
           :url="`/pages/goods/goods?id=`"
         >
           <image
