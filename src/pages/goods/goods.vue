@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { getGoodsByIdAPI } from '@/services/goods'
+import type { GoodsResult } from '@/types/goods'
 import { onLoad } from '@dcloudio/uni-app'
+import { ref } from 'vue'
 
 // 获取屏幕边界到安全区域距离
 const { safeAreaInsets } = uni.getSystemInfoSync()
@@ -11,8 +13,10 @@ const query = defineProps<{
 }>()
 
 // 获取商品详情信息
+const goods = ref<GoodsResult>()
 const getGoodsByIdData = async () => {
   const res = await getGoodsByIdAPI(query.id)
+  goods.value = res.result
 }
 
 // 页面加载
@@ -28,35 +32,8 @@ onLoad(() => {
       <!-- 商品主图 -->
       <view class="preview">
         <swiper circular>
-          <swiper-item>
-            <image
-              mode="aspectFill"
-              src="https://yanxuan-item.nosdn.127.net/99c83709ca5f9fd5c5bb35d207ad7822.png"
-            />
-          </swiper-item>
-          <swiper-item>
-            <image
-              mode="aspectFill"
-              src="https://yanxuan-item.nosdn.127.net/f9107d47c08f0b99c097e30055c39e1a.png"
-            />
-          </swiper-item>
-          <swiper-item>
-            <image
-              mode="aspectFill"
-              src="https://yanxuan-item.nosdn.127.net/754c56785cc8c39f7414752f62d79872.png"
-            />
-          </swiper-item>
-          <swiper-item>
-            <image
-              mode="aspectFill"
-              src="https://yanxuan-item.nosdn.127.net/ef16f8127610ef56a2a10466d6dae157.jpg"
-            />
-          </swiper-item>
-          <swiper-item>
-            <image
-              mode="aspectFill"
-              src="https://yanxuan-item.nosdn.127.net/1f0c3f5d32b0e804deb9b3d56ea6c3b2.png"
-            />
+          <swiper-item v-for="item in goods?.mainPictures" :key="item">
+            <image mode="aspectFill" :src="item" />
           </swiper-item>
         </swiper>
         <view class="indicator">
@@ -70,10 +47,10 @@ onLoad(() => {
       <view class="meta">
         <view class="price">
           <text class="symbol">¥</text>
-          <text class="number">29.90</text>
+          <text class="number">{{ goods?.price }}</text>
         </view>
-        <view class="name ellipsis">云珍·轻软旅行长绒棉方巾 </view>
-        <view class="desc"> 轻巧无捻小方巾，旅行便携 </view>
+        <view class="name ellipsis">{{ goods?.name }}</view>
+        <view class="desc"> {{ goods?.desc }} </view>
       </view>
 
       <!-- 操作面板 -->
@@ -101,23 +78,17 @@ onLoad(() => {
       <view class="content">
         <view class="properties">
           <!-- 属性详情 -->
-          <view class="item">
-            <text class="label">属性名</text>
-            <text class="value">属性值</text>
-          </view>
-          <view class="item">
-            <text class="label">属性名</text>
-            <text class="value">属性值</text>
+          <view class="item" v-for="item in goods?.details.properties" :key="item.name">
+            <text class="label">{{ item.name }}</text>
+            <text class="value">{{ item.value }}</text>
           </view>
         </view>
         <!-- 图片详情 -->
         <image
+          v-for="item in goods?.details.pictures"
+          :key="item"
           mode="widthFix"
-          src="https://yanxuan-item.nosdn.127.net/a8d266886d31f6eb0d7333c815769305.jpg"
-        ></image>
-        <image
-          mode="widthFix"
-          src="https://yanxuan-item.nosdn.127.net/a9bee1cb53d72e6cdcda210071cbd46a.jpg"
+          :src="item"
         ></image>
       </view>
     </view>
@@ -129,21 +100,17 @@ onLoad(() => {
       </view>
       <view class="content">
         <navigator
-          v-for="item in 4"
-          :key="item"
+          v-for="item in goods?.similarProducts"
+          :key="item.id"
           class="goods"
           hover-class="none"
-          :url="`/pages/goods/goods?id=`"
+          :url="`/pages/goods/goods?id=${item.id}`"
         >
-          <image
-            class="image"
-            mode="aspectFill"
-            src="https://yanxuan-item.nosdn.127.net/e0cea368f41da1587b3b7fc523f169d7.png"
-          ></image>
-          <view class="name ellipsis">简约山形纹全棉提花毛巾</view>
+          <image class="image" mode="aspectFill" :src="item.picture"></image>
+          <view class="name ellipsis">{{ item.name }}</view>
           <view class="price">
             <text class="symbol">¥</text>
-            <text class="number">18.50</text>
+            <text class="number">{{ item.price }}</text>
           </view>
         </navigator>
       </view>
