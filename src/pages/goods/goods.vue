@@ -29,19 +29,34 @@ onLoad(() => {
       <view class="preview">
         <swiper circular>
           <swiper-item>
-            <image src="https://yanxuan-item.nosdn.127.net/99c83709ca5f9fd5c5bb35d207ad7822.png" />
+            <image
+              mode="aspectFill"
+              src="https://yanxuan-item.nosdn.127.net/99c83709ca5f9fd5c5bb35d207ad7822.png"
+            />
           </swiper-item>
           <swiper-item>
-            <image src="https://yanxuan-item.nosdn.127.net/f9107d47c08f0b99c097e30055c39e1a.png" />
+            <image
+              mode="aspectFill"
+              src="https://yanxuan-item.nosdn.127.net/f9107d47c08f0b99c097e30055c39e1a.png"
+            />
           </swiper-item>
           <swiper-item>
-            <image src="https://yanxuan-item.nosdn.127.net/754c56785cc8c39f7414752f62d79872.png" />
+            <image
+              mode="aspectFill"
+              src="https://yanxuan-item.nosdn.127.net/754c56785cc8c39f7414752f62d79872.png"
+            />
           </swiper-item>
           <swiper-item>
-            <image src="https://yanxuan-item.nosdn.127.net/ef16f8127610ef56a2a10466d6dae157.jpg" />
+            <image
+              mode="aspectFill"
+              src="https://yanxuan-item.nosdn.127.net/ef16f8127610ef56a2a10466d6dae157.jpg"
+            />
           </swiper-item>
           <swiper-item>
-            <image src="https://yanxuan-item.nosdn.127.net/1f0c3f5d32b0e804deb9b3d56ea6c3b2.png" />
+            <image
+              mode="aspectFill"
+              src="https://yanxuan-item.nosdn.127.net/1f0c3f5d32b0e804deb9b3d56ea6c3b2.png"
+            />
           </swiper-item>
         </swiper>
         <view class="indicator">
@@ -57,7 +72,7 @@ onLoad(() => {
           <text class="symbol">¥</text>
           <text class="number">29.90</text>
         </view>
-        <view class="name ellipsis">【新疆棉】云珍·轻软旅行长绒棉方巾 </view>
+        <view class="name ellipsis">云珍·轻软旅行长绒棉方巾 </view>
         <view class="desc"> 轻巧无捻小方巾，旅行便携 </view>
       </view>
 
@@ -65,15 +80,15 @@ onLoad(() => {
       <view class="operation">
         <view class="item arrow">
           <text class="label">选择</text>
-          <text class="text ellipsis"> 囤货4条装（樱花粉+薄荷绿+麻米+雾蓝色） </text>
+          <text class="text ellipsis"> 请选择商品规格 </text>
         </view>
         <view class="item arrow">
           <text class="label">送至</text>
-          <text class="text ellipsis">北京市顺义区京顺路9号黑马程序员</text>
+          <text class="text ellipsis"> 请选择收获地址 </text>
         </view>
         <view class="item arrow">
           <text class="label">服务</text>
-          <text class="text ellipsis">无忧退 快速退款 免费包邮</text>
+          <text class="text ellipsis"> 无忧退 快速退款 免费包邮 </text>
         </view>
       </view>
     </view>
@@ -87,16 +102,12 @@ onLoad(() => {
         <view class="properties">
           <!-- 属性详情 -->
           <view class="item">
-            <text class="label">尺寸</text>
-            <text class="value">34x34cm</text>
+            <text class="label">属性名</text>
+            <text class="value">属性值</text>
           </view>
           <view class="item">
-            <text class="label">适用季节</text>
-            <text class="value">不限季节</text>
-          </view>
-          <view class="item">
-            <text class="label">材质</text>
-            <text class="value">长绒棉</text>
+            <text class="label">属性名</text>
+            <text class="value">属性值</text>
           </view>
         </view>
         <!-- 图片详情 -->
@@ -118,8 +129,8 @@ onLoad(() => {
       </view>
       <view class="content">
         <navigator
-          v-for="goods in 4"
-          :key="goods"
+          v-for="item in 4"
+          :key="item"
           class="goods"
           hover-class="none"
           :url="`/pages/goods/goods?id=`"
@@ -129,7 +140,7 @@ onLoad(() => {
             mode="aspectFill"
             src="https://yanxuan-item.nosdn.127.net/e0cea368f41da1587b3b7fc523f169d7.png"
           ></image>
-          <view class="name ellipsis">【新疆棉】简约山形纹全棉提花毛巾</view>
+          <view class="name ellipsis">简约山形纹全棉提花毛巾</view>
           <view class="price">
             <text class="symbol">¥</text>
             <text class="number">18.50</text>
