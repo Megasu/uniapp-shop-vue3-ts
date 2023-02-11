@@ -52,7 +52,9 @@ const subCategoryList = computed(() => {
           :class="{ active: index === activeIndex }"
           @tap="activeIndex = index"
         >
-          {{ item.name }}
+          <text class="name">
+            {{ item.name }}
+          </text>
         </view>
       </scroll-view>
       <!-- 右侧：二级分类 -->
@@ -130,9 +132,10 @@ page {
   flex: none;
   background-color: #f6f6f6;
   .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 96rpx;
-    text-align: center;
-    line-height: 96rpx;
     font-size: 26rpx;
     color: #595c63;
     position: relative;
