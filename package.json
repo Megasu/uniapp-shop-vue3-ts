@@ -45,18 +45,18 @@
     ]
   },
   "dependencies": {
-    "@dcloudio/uni-app": "3.0.0-alpha-3070120230210001",
-    "@dcloudio/uni-app-plus": "3.0.0-alpha-3070120230210001",
-    "@dcloudio/uni-components": "3.0.0-alpha-3070120230210001",
-    "@dcloudio/uni-h5": "3.0.0-alpha-3070120230210001",
-    "@dcloudio/uni-mp-alipay": "3.0.0-alpha-3070120230210001",
-    "@dcloudio/uni-mp-baidu": "3.0.0-alpha-3070120230210001",
-    "@dcloudio/uni-mp-kuaishou": "3.0.0-alpha-3070120230210001",
-    "@dcloudio/uni-mp-lark": "3.0.0-alpha-3070120230210001",
-    "@dcloudio/uni-mp-qq": "3.0.0-alpha-3070120230210001",
-    "@dcloudio/uni-mp-toutiao": "3.0.0-alpha-3070120230210001",
-    "@dcloudio/uni-mp-weixin": "3.0.0-alpha-3070120230210001",
-    "@dcloudio/uni-quickapp-webview": "3.0.0-alpha-3070120230210001",
+    "@dcloudio/uni-app": "3.0.0-alpha-3070220230217001",
+    "@dcloudio/uni-app-plus": "3.0.0-alpha-3070220230217001",
+    "@dcloudio/uni-components": "3.0.0-alpha-3070220230217001",
+    "@dcloudio/uni-h5": "3.0.0-alpha-3070220230217001",
+    "@dcloudio/uni-mp-alipay": "3.0.0-alpha-3070220230217001",
+    "@dcloudio/uni-mp-baidu": "3.0.0-alpha-3070220230217001",
+    "@dcloudio/uni-mp-kuaishou": "3.0.0-alpha-3070220230217001",
+    "@dcloudio/uni-mp-lark": "3.0.0-alpha-3070220230217001",
+    "@dcloudio/uni-mp-qq": "3.0.0-alpha-3070220230217001",
+    "@dcloudio/uni-mp-toutiao": "3.0.0-alpha-3070220230217001",
+    "@dcloudio/uni-mp-weixin": "3.0.0-alpha-3070220230217001",
+    "@dcloudio/uni-quickapp-webview": "3.0.0-alpha-3070220230217001",
     "@dcloudio/uni-ui": "^1.4.23",
     "pinia": "^2.0.27",
     "pinia-plugin-persistedstate": "^3.0.1",
@@ -65,10 +65,10 @@
   },
   "devDependencies": {
     "@dcloudio/types": "^3.2.8",
-    "@dcloudio/uni-automator": "3.0.0-alpha-3070120230210001",
-    "@dcloudio/uni-cli-shared": "3.0.0-alpha-3070120230210001",
-    "@dcloudio/uni-stacktracey": "3.0.0-alpha-3070120230210001",
-    "@dcloudio/vite-plugin-uni": "3.0.0-alpha-3070120230210001",
+    "@dcloudio/uni-automator": "3.0.0-alpha-3070220230217001",
+    "@dcloudio/uni-cli-shared": "3.0.0-alpha-3070220230217001",
+    "@dcloudio/uni-stacktracey": "3.0.0-alpha-3070220230217001",
+    "@dcloudio/vite-plugin-uni": "3.0.0-alpha-3070220230217001",
     "@rushstack/eslint-patch": "^1.1.4",
     "@types/node": "^18.11.9",
     "@types/wechat-miniprogram": "^3.4.1",
@@ -87,6 +87,6 @@
     "sass": "^1.56.1",
     "typescript": "^4.9.3",
     "vite": "^4.0.3",
-    "vue-tsc": "^1.0.24"
+    "vue-tsc": "^1.2.0"
   }
 }
