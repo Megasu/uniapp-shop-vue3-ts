@@ -1,7 +1,7 @@
 /** 小程序登录 登录用户信息 */
 export type LoginResult = {
   /** 账户名  */
-  accout: string
+  account: string
   /** 头像  */
   avatar: string
   /** 用户ID */
