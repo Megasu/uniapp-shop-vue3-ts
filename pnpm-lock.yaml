@@ -22,8 +22,8 @@ specifiers:
   '@rushstack/eslint-patch': ^1.1.4
   '@types/node': ^18.11.9
   '@types/wechat-miniprogram': ^3.4.1
-  '@uni-helper/uni-app-types': ^0.4.0
-  '@uni-helper/uni-ui-types': 0.3.0
+  '@uni-helper/uni-app-types': ^0.5.1
+  '@uni-helper/uni-ui-types': 0.4.0
   '@vitejs/plugin-vue': ^3.0.3
   '@vue/eslint-config-prettier': ^7.0.0
   '@vue/eslint-config-typescript': ^11.0.0
@@ -71,8 +71,8 @@ devDependencies:
   '@rushstack/eslint-patch': 1.2.0
   '@types/node': 18.11.10
   '@types/wechat-miniprogram': 3.4.1
-  '@uni-helper/uni-app-types': 0.4.0_typescript@4.9.3
-  '@uni-helper/uni-ui-types': 0.3.0_xfkg4s2owa2sgikoptip4r75ue
+  '@uni-helper/uni-app-types': 0.5.1_typescript@4.9.3
+  '@uni-helper/uni-ui-types': 0.4.0_jmjjbyglpi24ktihwr26glknfe
   '@vitejs/plugin-vue': 3.2.0_vite@4.0.3+vue@3.2.45
   '@vue/eslint-config-prettier': 7.0.0_5qrnzwqb344w6up62gv3safeoi
   '@vue/eslint-config-typescript': 11.0.2_5ma4o5namqj2syekqcvrgakwe4
@@ -367,13 +367,6 @@ packages:
 
   /@babel/parser/7.20.15:
     resolution: {integrity: sha512-DI4a1oZuf8wC+oAJA9RW6ga3Zbe8RZFt7kD9i4qAspz3I/yHet1VvC3DiSy/fsUvv5pvJuNPh0LPOdCcqinDPg==}
-    engines: {node: '>=6.0.0'}
-    hasBin: true
-    dependencies:
-      '@babel/types': 7.20.7
-
-  /@babel/parser/7.20.5:
-    resolution: {integrity: sha512-r27t/cy/m9uKLXQNWWebeCUHgnAZq0CpG1OwKRxzJMP1vpSU4bSIK2hq+/cp0bQxetkXx38n09rNu8jVkcK/zA==}
     engines: {node: '>=6.0.0'}
     hasBin: true
     dependencies:
@@ -2680,8 +2673,8 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@uni-helper/uni-app-types/0.4.0_typescript@4.9.3:
-    resolution: {integrity: sha512-kKERTsBRqJYunNsp+fCXrsYgxibqQvcO3H3Ohh0FhUbXFYQj3WsmWfciokTZ2dt5GftdERgWul+/ey5DhQnAdw==}
+  /@uni-helper/uni-app-types/0.5.1_typescript@4.9.3:
+    resolution: {integrity: sha512-rJsBDyQAsjSK+1I/wipqE0UA94xNsjWJhuJ6geZLTHNup1zeuq1ilx8L2IdbBnAEPLlZDHirNr78zQ3Vs33Zyg==}
     engines: {node: '>=14.18'}
     peerDependencies:
       typescript: ^4.8.0
@@ -2691,8 +2684,8 @@ packages:
       vue3: /vue/3.2.47
     dev: true
 
-  /@uni-helper/uni-ui-types/0.3.0_xfkg4s2owa2sgikoptip4r75ue:
-    resolution: {integrity: sha512-tESonxnfi+YnR70ZWsQbxx90sDmqKrU5N8SS2T7nlXeifQg3ZSUMSFmAFegr8fWz+/2R59TNjS5AZA/LaM2pXw==}
+  /@uni-helper/uni-ui-types/0.4.0_jmjjbyglpi24ktihwr26glknfe:
+    resolution: {integrity: sha512-y8W74Yf5TuKWuYnkAPyYWQ2tl7tT6sJqupkoniAHDgrYEKzlgZfJZMXPn96Qr7ZCGS6qrf1xUge3K32T+uJzog==}
     engines: {node: '>=14.18'}
     peerDependencies:
       '@uni-helper/uni-app-types': ^0.3.0
@@ -2700,8 +2693,8 @@ packages:
       '@uni-helper/uni-app-types':
         optional: true
     dependencies:
-      '@dcloudio/types': 3.2.8
-      '@uni-helper/uni-app-types': 0.4.0_typescript@4.9.3
+      '@dcloudio/types': 3.2.11
+      '@uni-helper/uni-app-types': 0.5.1_typescript@4.9.3
       vue3: /vue/3.2.47
     dev: true
 
@@ -2853,7 +2846,7 @@ packages:
   /@vue/compiler-sfc/3.2.45:
     resolution: {integrity: sha512-1jXDuWah1ggsnSAOGsec8cFjT/K6TMZ0sPL3o3d84Ft2AYZi2jWJgRMjw4iaK0rBfA89L5gw427H4n1RZQBu6Q==}
     dependencies:
-      '@babel/parser': 7.20.5
+      '@babel/parser': 7.20.15
       '@vue/compiler-core': 3.2.45
       '@vue/compiler-dom': 3.2.45
       '@vue/compiler-ssr': 3.2.45
