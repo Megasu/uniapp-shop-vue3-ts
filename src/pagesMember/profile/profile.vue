@@ -113,7 +113,7 @@ const onSubmit = async () => {
           </radio-group>
         </view>
         <view class="form-item">
-          <text class="label">出生日期</text>
+          <text class="label">生日</text>
           <picker
             class="picker"
             mode="date"
