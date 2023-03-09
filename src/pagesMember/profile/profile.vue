@@ -123,8 +123,8 @@ const onSubmit = async () => {
           <text class="label">生日</text>
           <picker
             @change="onBirthdayChange"
-            class="picker"
             mode="date"
+            class="picker"
             :value="profile?.birthday"
             start="1900-01-01"
             :end="new Date()"
@@ -135,7 +135,7 @@ const onSubmit = async () => {
         </view>
         <view class="form-item">
           <text class="label">城市</text>
-          <picker class="picker" :value="profile?.fullLocation?.split(' ')" mode="region">
+          <picker mode="region" class="picker" :value="profile?.fullLocation?.split(' ')">
             <view v-if="profile?.fullLocation">{{ profile.fullLocation }}</view>
             <view class="placeholder" v-else>请选择城市</view>
           </picker>
