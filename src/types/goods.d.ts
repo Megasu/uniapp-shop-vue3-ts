@@ -23,7 +23,7 @@ export type GoodsResult = {
   /** 可选规格集合备注[ 可选规格信息 ] */
   specs: SpecItem[]
   /** 用户地址列表[ 地址信息 ] */
-  userAddresses: UserAddressItem[]
+  userAddresses: AddressItem[]
 }
 
 /** 商品详情: 包含详情属性 + 详情图片 */
@@ -89,19 +89,23 @@ export type SpecValueItem = {
 }
 
 /** 地址信息 */
-export type UserAddressItem = {
-  /** 详细地址 */
-  address: string
-  /** 城市编码 */
-  cityCode: string
-  /** 所在区/县编码 */
-  countyCode: string
-  /** 省市区地址的名字 */
-  fullLocation: string
-  /** 地址id */
-  id: string
-  /** 是否为默认，1为是，0为否 */
-  isDefault: number
+export type AddressItem = {
+  /** 收货人姓名 */
+  receiver: string
+  /** 联系方式 */
+  contact: string
   /** 省份编码 */
   provinceCode: string
+  /** 城市编码 */
+  cityCode: string
+  /** 区/县编码 */
+  countyCode: string
+  /** 详细地址 */
+  address: string
+  /** 默认地址，1为是，0为否 */
+  isDefault: number
+  /** 收货地址 id */
+  id: string
+  /** 省市区 */
+  fullLocation: string
 }
