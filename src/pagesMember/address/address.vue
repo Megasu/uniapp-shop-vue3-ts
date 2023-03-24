@@ -23,7 +23,7 @@ onShow(() => {
     <scroll-view class="scroll-view" scroll-y>
       <view v-if="true" class="address">
         <view class="address-list">
-          <!-- 收获地址项 -->
+          <!-- 收货地址项 -->
           <view class="item" v-for="item in addressList" :key="item.id">
             <view class="item-content">
               <view class="user">
@@ -58,6 +58,20 @@ onShow(() => {
 page {
   height: 100%;
   overflow: hidden;
+}
+
+/* 删除按钮 */
+.delete-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 100%;
+  font-size: 28rpx;
+  color: #fff;
+  border-radius: 0;
+  padding: 0;
+  background-color: #cf4444;
 }
 
 .viewport {
@@ -123,24 +137,6 @@ page {
     line-height: 1.6;
     font-size: 26rpx;
     color: #333;
-  }
-
-  /* 右侧删除按钮 */
-  .item-right {
-    height: 100%;
-
-    .delete-button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 50px;
-      height: 100%;
-      font-size: 28rpx;
-      color: #fff;
-      border-radius: 0;
-      padding: 0;
-      background-color: #cf4444;
-    }
   }
 }
 
