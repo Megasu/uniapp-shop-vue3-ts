@@ -45,17 +45,17 @@ export type DetailsPropertyItem = {
 
 /** sku信息 */
 export type SkuItem = {
-  /** id */
+  /** sku id */
   id: string
-  /** 库存 */
+  /** sku 库存 */
   inventory: number
-  /** 原价 */
+  /** sku 原价 */
   oldPrice: number
-  /** sku图片 */
+  /** sku 图片 */
   picture: string
-  /** 当前价格 */
+  /** sku 当前价 */
   price: number
-  /** sku编码 */
+  /** sku 编码 */
   skuCode: string
   /** 规格集合[ 规格信息 ] */
   specs: SkuSpecItem[]
