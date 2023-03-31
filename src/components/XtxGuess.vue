@@ -119,7 +119,7 @@ defineExpose({
   }
   .image {
     width: 304rpx;
-    height: 260rpx;
+    height: 304rpx;
   }
   .name {
     height: 75rpx;
