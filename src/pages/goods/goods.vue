@@ -229,7 +229,9 @@ const onAddCart = async (ev: SkuPopupEvent) => {
       <button class="icons-button" open-type="contact">
         <text class="icon-handset"></text>客服
       </button>
-      <navigator class="icons-button"><text class="icon-cart"></text>购物车</navigator>
+      <navigator class="icons-button" url="/pages/cart/cart" open-type="switchTab">
+        <text class="icon-cart"></text>购物车
+      </navigator>
     </view>
     <view class="buttons">
       <view @tap="openSkuPopup(SkuMode.Cart)" class="addcart"> 加入购物车 </view>
