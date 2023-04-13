@@ -1,3 +1,5 @@
+import type { AddressItem } from './address'
+
 /** 获取预付订单 返回信息 */
 export type OrderPreResult = {
   /** 商品集合 [ 商品信息 ] */
