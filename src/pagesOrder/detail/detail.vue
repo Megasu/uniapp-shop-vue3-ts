@@ -141,15 +141,19 @@ const onOrderPay = async () => {
         <template v-else>
           <!-- 订单状态文字 -->
           <view class="status"> {{ orderStateList[order.orderState].text }} </view>
-          <navigator
-            class="button"
-            :url="`/pagesOrder/create/create?orderId=${query.id}`"
-            hover-class="none"
-          >
-            再次购买
-          </navigator>
-          <!-- 待发货状态：模拟发货,开发期间使用,用于修改订单状态为已发货 -->
-          <view v-if="false" class="button"> 模拟发货 </view>
+          <view class="button-group">
+            <navigator
+              class="button"
+              :url="`/pagesOrder/create/create?orderId=${query.id}`"
+              hover-class="none"
+            >
+              再次购买
+            </navigator>
+            <!-- 待发货状态：模拟发货,开发期间使用,用于修改订单状态为已发货 -->
+            <view v-if="false" class="button"> 模拟发货 </view>
+            <!-- 待收货状态: 展示确认收货按钮 -->
+            <view v-if="false" class="button"> 确认收货 </view>
+          </view>
         </template>
       </view>
       <!-- 配送状态 -->
@@ -352,7 +356,7 @@ page {
   }
 
   .tips {
-    margin-top: 30rpx;
+    margin: 30rpx 0;
     display: flex;
     font-size: 14px;
     align-items: center;
@@ -362,12 +366,19 @@ page {
     }
   }
 
+  .button-group {
+    margin-top: 30rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .button {
     width: 260rpx;
     height: 64rpx;
+    margin: 0 10rpx;
     text-align: center;
     line-height: 64rpx;
-    margin-top: 30rpx;
     font-size: 28rpx;
     color: #27ba9b;
     border-radius: 68rpx;
