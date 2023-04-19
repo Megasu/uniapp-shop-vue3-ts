@@ -5,10 +5,10 @@ import { useMemberStore } from '@/stores'
 const { safeAreaInsets } = uni.getSystemInfoSync()
 // 订单选项
 const orderTypes = [
-  { type: 1, text: '待付款', icon: 'icon-currency' },
-  { type: 2, text: '待发货', icon: 'icon-gift' },
-  { type: 3, text: '待收货', icon: 'icon-check' },
-  { type: 4, text: '待评价', icon: 'icon-comment' },
+  { type: '1', text: '待付款', icon: 'icon-currency' },
+  { type: '2', text: '待发货', icon: 'icon-gift' },
+  { type: '3', text: '待收货', icon: 'icon-check' },
+  { type: '4', text: '待评价', icon: 'icon-comment' },
 ]
 // 获取会员信息
 const memberStore = useMemberStore()
@@ -60,7 +60,7 @@ const { guessRef, onScrolltolower } = useGuessList()
     <view class="orders">
       <view class="title">
         我的订单
-        <navigator class="navigator" url="/pagesMember/order/order?type=0" hover-class="none">
+        <navigator class="navigator" url="/pagesOrder/list/list?type=0" hover-class="none">
           查看全部订单<text class="icon-right"></text>
         </navigator>
       </view>
@@ -70,7 +70,7 @@ const { guessRef, onScrolltolower } = useGuessList()
           v-for="item in orderTypes"
           :key="item.type"
           :class="item.icon"
-          :url="`/pagesMember/order/order?type=${item.type}`"
+          :url="`/pagesOrder/list/list?type=${item.type}`"
           class="navigator"
           hover-class="none"
         >
