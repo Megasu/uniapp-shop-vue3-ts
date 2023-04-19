@@ -47,6 +47,12 @@ const loginSuccess = (profile: LoginResult) => {
       ></image>
     </view>
     <view class="login">
+      <!-- 网页端表单登录 -->
+      <!-- <input class="input" type="text" placeholder="请输入用户名/手机号码" /> -->
+      <!-- <input class="input" type="text" password placeholder="请输入密码" /> -->
+      <!-- <button class="button phone">登录</button> -->
+
+      <!-- 小程序端授权登录 -->
       <button class="button phone" open-type="getPhoneNumber" @getphonenumber="onGetphonenumber">
         <text class="icon icon-phone"></text>
         手机号快捷登录
@@ -56,6 +62,7 @@ const loginSuccess = (profile: LoginResult) => {
           <text>其他登录方式</text>
         </view>
         <view class="options">
+          <!-- 通用模拟登录 -->
           <button @tap="onGetphonenumberSimple">
             <text class="icon icon-phone">模拟快捷登录</text>
           </button>
@@ -93,6 +100,16 @@ page {
   flex-direction: column;
   height: 60vh;
   padding: 40rpx 20rpx 20rpx;
+
+  .input {
+    width: 100%;
+    height: 80rpx;
+    font-size: 28rpx;
+    border-radius: 72rpx;
+    border: 1px solid #ddd;
+    padding-left: 30rpx;
+    margin-bottom: 20rpx;
+  }
 
   .button {
     display: flex;
