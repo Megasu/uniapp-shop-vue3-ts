@@ -689,6 +689,7 @@ page {
 
   .delete {
     order: 4;
+    color: #cf4444;
   }
 
   .button {
