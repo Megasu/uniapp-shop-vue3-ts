@@ -18,7 +18,7 @@ const props = defineProps<{
 }>()
 
 // 请求参数
-const queryParams: OrderListParams = {
+const queryParams: Required<OrderListParams> = {
   page: 1,
   pageSize: 5,
   orderState: props.orderState,
@@ -26,9 +26,31 @@ const queryParams: OrderListParams = {
 
 // 获取订单列表
 const orderList = ref<OrderItem[]>([])
+// 是否加载中标记，用于防止滚动触底触发多次请求
+const isLoading = ref(false)
 const getMemberOrderData = async () => {
+  // 如果数据出于加载中，退出函数
+  if (isLoading.value) return
+  // 退出分页判断
+  if (isFinish.value === true) {
+    return uni.showToast({ icon: 'none', title: '没有更多数据~' })
+  }
+  // 发送请求前，标记为加载中
+  isLoading.value = true
+  // 发送请求
   const res = await getMemberOrderAPI(queryParams)
-  orderList.value = res.result.items
+  // 发送请求后，重置标记
+  isLoading.value = false
+  // 数组追加
+  orderList.value.push(...res.result.items)
+  // 分页条件
+  if (queryParams.page < res.result.pages) {
+    // 页码累加
+    queryParams.page++
+  } else {
+    // 分页已结束
+    isFinish.value = true
+  }
 }
 
 onMounted(() => {
@@ -109,6 +131,7 @@ const onRefresherrefresh = async () => {
     refresher-enabled
     :refresher-triggered="isTriggered"
     @refresherrefresh="onRefresherrefresh"
+    @scrolltolower="getMemberOrderData"
   >
     <view class="card" v-for="order in orderList" :key="order.id">
       <!-- 订单信息 -->
@@ -172,7 +195,7 @@ const onRefresherrefresh = async () => {
     </view>
     <!-- 底部提示文字 -->
     <view class="loading-text" :style="{ paddingBottom: safeAreaInsets?.bottom + 'px' }">
-      {{ true ? '没有更多数据~' : '正在加载...' }}
+      {{ isFinish ? '没有更多数据~' : '正在加载...' }}
     </view>
   </scroll-view>
 </template>
