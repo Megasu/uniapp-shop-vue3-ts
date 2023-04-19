@@ -82,10 +82,34 @@ const onOrderDelete = (id: string) => {
     },
   })
 }
+
+// 是否分页结束
+const isFinish = ref(false)
+// 是否触发下拉刷新
+const isTriggered = ref(false)
+// 自定义下拉刷新被触发
+const onRefresherrefresh = async () => {
+  // 开始动画
+  isTriggered.value = true
+  // 重置数据
+  queryParams.page = 1
+  orderList.value = []
+  isFinish.value = false
+  // 加载数据
+  await getMemberOrderData()
+  // 关闭动画
+  isTriggered.value = false
+}
 </script>
 
 <template>
-  <scroll-view scroll-y class="orders">
+  <scroll-view
+    scroll-y
+    class="orders"
+    refresher-enabled
+    :refresher-triggered="isTriggered"
+    @refresherrefresh="onRefresherrefresh"
+  >
     <view class="card" v-for="order in orderList" :key="order.id">
       <!-- 订单信息 -->
       <view class="status">
