@@ -144,6 +144,9 @@ page {
       button {
         padding: 0;
         background-color: transparent;
+        &::after {
+          border: none;
+        }
       }
     }
 

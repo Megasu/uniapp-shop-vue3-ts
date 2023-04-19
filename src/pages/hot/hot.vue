@@ -76,7 +76,7 @@ const onScrolltolower = async () => {
   <view class="viewport">
     <!-- 推荐封面图 -->
     <view class="cover">
-      <image :src="bannerPicture"></image>
+      <image class="image" mode="widthFix" :src="bannerPicture"></image>
     </view>
     <!-- 推荐选项 -->
     <view class="tabs">
@@ -141,6 +141,9 @@ page {
   position: absolute;
   left: 0;
   top: 0;
+  .image {
+    width: 750rpx;
+  }
 }
 .scroll-view {
   flex: 1;

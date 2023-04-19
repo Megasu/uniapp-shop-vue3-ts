@@ -143,7 +143,7 @@ const onBuyNow = (ev: SkuPopupEvent) => {
       <view class="preview">
         <swiper @change="onChange" circular>
           <swiper-item v-for="item in goods?.mainPictures" :key="item">
-            <image @tap="onTapImage(item)" mode="aspectFill" :src="item" />
+            <image class="image" @tap="onTapImage(item)" mode="aspectFill" :src="item" />
           </swiper-item>
         </swiper>
         <view class="indicator">
@@ -195,6 +195,7 @@ const onBuyNow = (ev: SkuPopupEvent) => {
         </view>
         <!-- 图片详情 -->
         <image
+          class="image"
           v-for="item in goods?.details.pictures"
           :key="item"
           mode="widthFix"
@@ -307,6 +308,10 @@ page {
   .preview {
     height: 750rpx;
     position: relative;
+    .image {
+      width: 750rpx;
+      height: 750rpx;
+    }
     .indicator {
       height: 40rpx;
       padding: 0 24rpx;
@@ -398,6 +403,9 @@ page {
   padding-left: 20rpx;
   .content {
     margin-left: -20rpx;
+    .image {
+      width: 100%;
+    }
   }
   .properties {
     padding: 0 20rpx;
@@ -421,21 +429,20 @@ page {
 
 /* 同类推荐 */
 .similar {
-  padding-left: 20rpx;
   .content {
     padding: 0 20rpx 20rpx;
-    margin-left: -20rpx;
     background-color: #f4f4f4;
-    overflow: hidden;
-    navigator {
-      width: 345rpx;
+    display: flex;
+    flex-wrap: wrap;
+    .goods {
+      width: 340rpx;
       padding: 24rpx 20rpx 20rpx;
-      margin: 20rpx 20rpx 0 0;
+      margin: 20rpx 7rpx;
       border-radius: 10rpx;
       background-color: #fff;
-      float: left;
     }
     .image {
+      width: 300rpx;
       height: 260rpx;
     }
     .name {
@@ -504,6 +511,9 @@ page {
       font-size: 20rpx;
       color: #333;
       background-color: #fff;
+      &::after {
+        border: none;
+      }
     }
     text {
       display: block;

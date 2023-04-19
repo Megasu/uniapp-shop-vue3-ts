@@ -32,7 +32,7 @@ defineProps<{
   min-height: 328rpx;
 
   .category-item {
-    width: 20%;
+    width: 150rpx;
     display: flex;
     justify-content: center;
     flex-direction: column;

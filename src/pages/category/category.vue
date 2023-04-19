@@ -207,7 +207,7 @@ page {
     padding: 20rpx 0;
     .goods {
       width: 150rpx;
-      margin: 0rpx 30rpx 20rpx 0;
+      margin: 0rpx 20rpx 20rpx 0;
       &:nth-child(3n) {
         margin-right: 0;
       }

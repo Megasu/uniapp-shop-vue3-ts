@@ -208,6 +208,9 @@ page {
         font-size: 60rpx;
         color: #ff9545;
       }
+      &::after {
+        border: none;
+      }
     }
     .contact {
       padding: 0;
