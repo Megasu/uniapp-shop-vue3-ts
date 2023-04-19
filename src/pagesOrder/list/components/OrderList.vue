@@ -67,6 +67,21 @@ const onOrderConfirm = (id: string) => {
     },
   })
 }
+
+// 删除订单
+const onOrderDelete = (id: string) => {
+  uni.showModal({
+    content: '你确定要删除该订单？',
+    success: async (res) => {
+      if (res.confirm) {
+        await deleteMemberOrderAPI({ ids: [id] })
+        // 删除成功，界面中删除订单
+        const index = orderList.value.findIndex((v) => v.id === id)
+        orderList.value.splice(index, 1)
+      }
+    },
+  })
+}
 </script>
 
 <template>
@@ -78,7 +93,11 @@ const onOrderConfirm = (id: string) => {
         <!-- 订单状态文字 -->
         <text>{{ orderStateList[order.orderState].text }}</text>
         <!-- 待评价/已完成/已取消 状态: 展示删除订单 -->
-        <text v-if="order.orderState >= OrderState.DaiPingJia" class="icon-delete"></text>
+        <text
+          v-if="order.orderState >= OrderState.DaiPingJia"
+          class="icon-delete"
+          @tap="onOrderDelete(order.id)"
+        ></text>
       </view>
       <!-- 商品信息，点击商品跳转到订单详情，不是商品详情 -->
       <navigator
