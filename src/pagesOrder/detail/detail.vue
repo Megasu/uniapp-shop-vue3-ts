@@ -4,6 +4,7 @@ import { OrderState, orderStateList } from '@/services/constants'
 import {
   deleteMemberOrderAPI,
   getMemberOrderByIdAPI,
+  getMemberOrderCancelByIdAPI,
   getMemberOrderLogisticsByIdAPI,
 } from '@/services/order'
 import type { LogisticItem, OrderResult } from '@/types/order'
@@ -158,6 +159,18 @@ const onOrderDelete = () => {
       }
     },
   })
+}
+
+// 取消订单
+const onOrderCancel = async () => {
+  // 发送请求
+  const res = await getMemberOrderCancelByIdAPI(query.id, { cancelReason: reason.value })
+  // 更新订单信息
+  order.value = res.result
+  // 关闭弹窗
+  popup.value?.close!()
+  // 轻提示
+  uni.showToast({ icon: 'none', title: '订单取消成功' })
 }
 </script>
 
@@ -321,7 +334,11 @@ const onOrderDelete = () => {
             再次购买
           </navigator>
           <!-- 待收货状态: 展示确认收货 -->
-          <view class="button primary" v-if="order.orderState === OrderState.DaiShouHuo">
+          <view
+            class="button primary"
+            v-if="order.orderState === OrderState.DaiShouHuo"
+            @tap="onOrderConfirm"
+          >
             确认收货
           </view>
           <!-- 待评价状态: 展示去评价 -->
@@ -355,7 +372,7 @@ const onOrderDelete = () => {
       </view>
       <view class="footer">
         <view class="button" @tap="popup?.close?.()">取消</view>
-        <view class="button primary">确认</view>
+        <view class="button primary" @tap="onOrderCancel">确认</view>
       </view>
     </view>
   </uni-popup>
