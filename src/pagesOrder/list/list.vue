@@ -42,20 +42,21 @@ const activeIndex = ref(orderTabs.value.findIndex((v) => v.orderState === Number
       <swiper-item v-for="item in orderTabs" :key="item.title">
         <!-- 订单列表 -->
         <scroll-view scroll-y class="orders">
-          <view class="card" v-for="item in 2" :key="item">
+          <view class="card" v-for="order in 2" :key="order">
             <!-- 订单信息 -->
             <view class="status">
               <text class="date">2023-04-14 13:14:20</text>
+              <!-- 订单状态文字 -->
               <text>待付款</text>
               <!-- 待评价/已完成/已取消 状态: 展示删除订单 -->
               <text class="icon-delete"></text>
             </view>
-            <!-- 商品信息 -->
+            <!-- 商品信息，点击商品跳转到订单详情，不是商品详情 -->
             <navigator
-              v-for="sku in 2"
-              :key="sku"
+              v-for="item in 2"
+              :key="item"
               class="goods"
-              :url="`/pagesOrder/detail/detail?id=1`"
+              :url="`/pagesOrder/detail/detail?id=orderId`"
               hover-class="none"
             >
               <view class="cover">
@@ -77,6 +78,7 @@ const activeIndex = ref(orderTabs.value.findIndex((v) => v.orderState === Number
             </view>
             <!-- 订单操作按钮 -->
             <view class="action">
+              <!-- 待付款状态：显示去支付按钮 -->
               <template v-if="true">
                 <view class="button primary">去支付</view>
               </template>
