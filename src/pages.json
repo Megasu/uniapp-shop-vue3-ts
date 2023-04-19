@@ -161,6 +161,12 @@
 					"style": {
 						"navigationBarTitleText": "支付结果"
 					}
+				},
+				{
+					"path": "list/list",
+					"style": {
+						"navigationBarTitleText": "订单列表"
+					}
 				}
 			]
 		}
