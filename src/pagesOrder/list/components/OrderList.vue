@@ -66,7 +66,7 @@ const onOrderPay = async (id: string) => {
     // #ifdef MP-WEIXIN
     // 正式环境微信支付
     const res = await getPayWxPayMiniPayAPI({ orderId: id })
-    wx.requestPayment(res.result)
+    await wx.requestPayment(res.result)
     // #endif
   }
   // 成功提示
