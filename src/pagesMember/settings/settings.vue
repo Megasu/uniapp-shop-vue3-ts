@@ -27,12 +27,14 @@ const onLogout = () => {
         我的收货地址
       </navigator>
     </view>
+    <!-- #ifdef MP-WEIXIN -->
     <!-- 列表2 -->
     <view class="list">
       <button hover-class="none" class="item arrow" open-type="openSetting">授权管理</button>
       <button hover-class="none" class="item arrow" open-type="feedback">问题反馈</button>
       <button hover-class="none" class="item arrow" open-type="contact">联系我们</button>
     </view>
+    <!-- #endif -->
     <!-- 列表3 -->
     <view class="list">
       <button hover-class="none" class="item arrow">关于小兔鲜儿</button>
