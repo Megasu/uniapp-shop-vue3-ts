@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { InputNumberBoxEvent } from '@/components/vk-data-input-number-box/vk-data-input-number-box'
+import { useGuessList } from '@/composables'
 import {
   deleteMemberCartAPI,
   getMemberCartAPI,
@@ -102,10 +103,13 @@ const gotoPayment = () => {
   // 跳转到结算页
   uni.navigateTo({ url: '/pagesOrder/create/create' })
 }
+
+// 猜你喜欢
+const { guessRef, onScrolltolower } = useGuessList()
 </script>
 
 <template>
-  <scroll-view scroll-y class="scroll-view">
+  <scroll-view scroll-y class="scroll-view" @scrolltolower="onScrolltolower">
     <!-- 已登录: 显示购物车 -->
     <template v-if="memberStore.profile">
       <!-- 购物车列表 -->
@@ -191,7 +195,7 @@ const gotoPayment = () => {
       </navigator>
     </view>
     <!-- 猜你喜欢 -->
-    <XtxGuess ref="guessRef"></XtxGuess>
+    <XtxGuess ref="guessRef" />
     <!-- 底部占位空盒子 -->
     <view class="toolbar-height"></view>
   </scroll-view>
