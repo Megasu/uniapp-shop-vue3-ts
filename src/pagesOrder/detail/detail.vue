@@ -44,6 +44,7 @@ const query = defineProps<{
 
 // 获取页面栈
 const pages = getCurrentPages()
+// #ifdef MP-WEIXIN
 // 获取当前页面实例，数组最后一项
 const pageInstance = pages.at(-1) as any
 
@@ -76,6 +77,7 @@ onReady(() => {
     endScrollOffset: 50,
   })
 })
+// #endif
 
 // 获取订单详情
 const order = ref<OrderResult>()
