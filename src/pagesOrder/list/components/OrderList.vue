@@ -128,6 +128,7 @@ const onRefresherrefresh = async () => {
 
 <template>
   <scroll-view
+    enable-back-to-top
     scroll-y
     class="orders"
     refresher-enabled

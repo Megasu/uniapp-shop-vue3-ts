@@ -86,7 +86,7 @@ const onOrderSubmit = async () => {
 </script>
 
 <template>
-  <scroll-view scroll-y class="viewport">
+  <scroll-view enable-back-to-top scroll-y class="viewport">
     <!-- 收货地址 -->
     <navigator
       v-if="selecteAddress"

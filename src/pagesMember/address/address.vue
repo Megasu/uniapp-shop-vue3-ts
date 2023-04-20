@@ -46,7 +46,7 @@ const onChangeAddress = (item: AddressItem) => {
 <template>
   <view class="viewport">
     <!-- 地址列表 -->
-    <scroll-view class="scroll-view" scroll-y>
+    <scroll-view enable-back-to-top class="scroll-view" scroll-y>
       <view v-if="addressList.length" class="address">
         <uni-swipe-action class="address-list">
           <!-- 收货地址项 -->

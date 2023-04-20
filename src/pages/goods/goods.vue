@@ -136,7 +136,7 @@ const onBuyNow = (ev: SkuPopupEvent) => {
     @add-cart="onAddCart"
     @buy-now="onBuyNow"
   />
-  <scroll-view scroll-y class="viewport">
+  <scroll-view enable-back-to-top scroll-y class="viewport">
     <!-- 基本信息 -->
     <view class="goods">
       <!-- 商品主图 -->

@@ -91,6 +91,7 @@ const onScrolltolower = async () => {
     </view>
     <!-- 推荐列表 -->
     <scroll-view
+      enable-back-to-top
       v-for="(item, index) in subTypes"
       :key="item.id"
       v-show="activeIndex === index"

@@ -11,7 +11,7 @@ const { guessRef, onScrolltolower } = useGuessList()
 </script>
 
 <template>
-  <scroll-view class="viewport" scroll-y @scrolltolower="onScrolltolower">
+  <scroll-view enable-back-to-top class="viewport" scroll-y @scrolltolower="onScrolltolower">
     <!-- 订单状态 -->
     <view class="overview">
       <view class="status icon-checked">支付成功</view>

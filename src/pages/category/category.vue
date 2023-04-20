@@ -61,7 +61,7 @@ const subCategoryList = computed(() => {
         </view>
       </scroll-view>
       <!-- 右侧：二级分类 -->
-      <scroll-view class="secondary" scroll-y>
+      <scroll-view enable-back-to-top class="secondary" scroll-y>
         <!-- 焦点图 -->
         <XtxSwiper class="banner" :list="bannerList" />
         <!-- 内容区域 -->

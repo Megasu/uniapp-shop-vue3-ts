@@ -192,7 +192,13 @@ const onOrderCancel = async () => {
       <view class="title">订单详情</view>
     </view>
   </view>
-  <scroll-view scroll-y class="viewport" id="scroller" @scrolltolower="onScrolltolower">
+  <scroll-view
+    enable-back-to-top
+    scroll-y
+    class="viewport"
+    id="scroller"
+    @scrolltolower="onScrolltolower"
+  >
     <template v-if="order">
       <!-- 订单状态 -->
       <view class="overview" :style="{ paddingTop: safeAreaInsets!.top + 20 + 'px' }">

@@ -70,6 +70,7 @@ const onRefresherrefresh = async () => {
   <CustomNavbar />
   <!-- 滚动容器 -->
   <scroll-view
+    enable-back-to-top
     refresher-enabled
     @refresherrefresh="onRefresherrefresh"
     :refresher-triggered="isTriggered"
