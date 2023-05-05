@@ -6,6 +6,7 @@
     "evils.uniapp-vscode", // uni-app 文档
     "vue.volar", // vue3 语法支持
     "vue.vscode-typescript-vue-plugin", // vue3 ts 插件
+    "editorconfig.editorconfig", // editorconfig
     "dbaeumer.vscode-eslint", // eslint
     "esbenp.prettier-vscode" // prettier
   ]
