@@ -98,7 +98,7 @@ pnpm i --registry=https://registry.npmmirror.com
 npm run dev:mp-weixin
 
 # H5端
-npm run dev:mp-weixin
+npm run dev:h5
 ```
 
 3. 微信开发者工具导入 `/dist/dev/mp-weixin` 目录
