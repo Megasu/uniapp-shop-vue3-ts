@@ -11,7 +11,10 @@
     <view
       class="layer attr-content"
       :class="{ 'safe-area-inset-bottom': safeAreaInsetBottom }"
-      :style="{ borderRadius: borderRadius + 'rpx ' + borderRadius + 'rpx 0 0' }"
+      :style="{
+        borderRadius: borderRadius + 'rpx ' + borderRadius + 'rpx 0 0',
+        paddingBottom: safeBottom + 'px',
+      }"
     >
       <view class="specification-wrapper">
         <scroll-view class="specification-wrapper-content" scroll-y="true">
@@ -394,6 +397,7 @@ export default {
   },
   data() {
     return {
+      safeBottom: 0,  // 留出底部安全距离
       complete: false, // 组件是否加载完成
       goodsInfo: {}, // 商品信息
       isShow: false, // true 显示 false 隐藏
@@ -497,6 +501,10 @@ export default {
     if (that.valueCom) {
       that.open()
     }
+    // 获取屏幕边界到安全区域距离
+    const {safeAreaInsets} = uni.getSystemInfoSync()
+    // 底部安全距离
+    that.safeBottom = safeAreaInsets.bottom
   },
   mounted() {},
   methods: {
