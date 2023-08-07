@@ -6,8 +6,7 @@ const activeIndex = ref(0)
 
 // 当 swiper 下标发生变化时触发
 const onChange: UniHelper.SwiperOnChange = (ev) => {
-  // ! 非空断言，主观上排除掉空值情况
-  activeIndex.value = ev.detail!.current
+  activeIndex.value = ev.detail.current
 }
 // 定义 props 接收
 defineProps<{

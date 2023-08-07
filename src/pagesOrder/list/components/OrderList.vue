@@ -359,6 +359,7 @@ const onRefresherrefresh = async () => {
     .primary {
       color: #fff;
       background-color: #27ba9b;
+      border-color: #27ba9b;
     }
   }
 

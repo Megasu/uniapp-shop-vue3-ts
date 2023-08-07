@@ -6,14 +6,14 @@ import {
   getMemberOrderByIdAPI,
   getMemberOrderCancelByIdAPI,
   getMemberOrderLogisticsByIdAPI,
+  getMemberOrderConsignmentByIdAPI,
+  putMemberOrderReceiptByIdAPI,
 } from '@/services/order'
 import type { LogisticItem, OrderResult } from '@/types/order'
 import { onLoad, onReady } from '@dcloudio/uni-app'
 import { ref } from 'vue'
 import PageSkeleton from './components/PageSkeleton.vue'
 import { getPayMockAPI, getPayWxPayMiniPayAPI } from '@/services/pay'
-import { getMemberOrderConsignmentByIdAPI } from '@/services/order'
-import { putMemberOrderReceiptByIdAPI } from '@/services/order'
 
 // 获取屏幕边界到安全区域距离
 const { safeAreaInsets } = uni.getSystemInfoSync()

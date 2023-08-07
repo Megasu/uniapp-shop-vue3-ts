@@ -58,7 +58,7 @@ onLoad(() => {
 // 轮播图变化时
 const currentIndex = ref(0)
 const onChange: UniHelper.SwiperOnChange = (ev) => {
-  currentIndex.value = ev.detail!.current
+  currentIndex.value = ev.detail.current
 }
 
 // 点击图片时
