@@ -12,6 +12,14 @@ import type { CartItem } from '@/types/cart'
 import { onShow } from '@dcloudio/uni-app'
 import { computed, ref } from 'vue'
 
+// 是否适配底部安全区域
+defineProps<{
+  safeAreaInsetBottom?: boolean
+}>()
+
+// 获取屏幕边界到安全区域距离
+const { safeAreaInsets } = uni.getSystemInfoSync()
+
 // 获取会员Store
 const memberStore = useMemberStore()
 
@@ -172,7 +180,11 @@ const { guessRef, onScrolltolower } = useGuessList()
         </navigator>
       </view>
       <!-- 吸底工具栏 -->
-      <view class="toolbar">
+      <view
+        v-if="cartList.length"
+        class="toolbar"
+        :style="{ paddingBottom: safeAreaInsetBottom ? safeAreaInsets?.bottom + 'px' : 0 }"
+      >
         <text @tap="onChangeSelectedAll" class="all" :class="{ checked: isSelectedAll }">全选</text>
         <text class="text">合计:</text>
         <text class="amount">{{ selectedCartListMoney }}</text>
@@ -418,6 +430,7 @@ const { guessRef, onScrolltolower } = useGuessList()
   border-top: 1rpx solid #ededed;
   border-bottom: 1rpx solid #ededed;
   background-color: #fff;
+  box-sizing: content-box;
 
   .all {
     margin-left: 25rpx;
@@ -461,17 +474,13 @@ const { guessRef, onScrolltolower } = useGuessList()
   }
 
   .button-grounp {
-    position: absolute;
-    right: 10rpx;
-    top: 50%;
-
+    margin-left: auto;
     display: flex;
     justify-content: space-between;
     text-align: center;
     line-height: 72rpx;
     font-size: 13px;
     color: #fff;
-    transform: translateY(-50%);
 
     .button {
       width: 240rpx;
