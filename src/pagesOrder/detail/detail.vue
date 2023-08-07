@@ -44,9 +44,27 @@ const query = defineProps<{
 
 // 获取页面栈
 const pages = getCurrentPages()
+
+interface Keyframe {
+  [key: string]: string | number
+}
+interface AnimateOptions {
+  scrollSource: string
+  timeRange: number
+  startScrollOffset: number
+  endScrollOffset: number
+}
+interface PageInstance extends Page.PageInstance {
+  animate: (
+    selector: string,
+    keyframes: Keyframe[],
+    duration: number,
+    options?: AnimateOptions,
+  ) => void
+}
 // #ifdef MP-WEIXIN
 // 获取当前页面实例，数组最后一项
-const pageInstance = pages.at(-1) as any
+const pageInstance = pages.at(-1) as PageInstance
 
 // 页面渲染完毕，绑定动画效果
 onReady(() => {

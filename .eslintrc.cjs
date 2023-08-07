@@ -17,6 +17,8 @@ module.exports = {
     getCurrentPages: true,
     UniApp: true,
     UniHelper: true,
+    Page: true,
+    AnyObject: true,
   },
   parserOptions: {
     ecmaVersion: 'latest',
