@@ -188,6 +188,10 @@
 </template>
 
 <style>
+/* #ifdef H5 */
+/* 修复 H5 端骨架屏样式异常 */
+@import '../styles/category.scss';
+/* #endif */
 .sk-transparent {
   color: transparent !important;
 }
