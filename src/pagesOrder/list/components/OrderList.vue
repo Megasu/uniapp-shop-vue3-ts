@@ -80,6 +80,7 @@ const onOrderPay = async (id: string) => {
 const onOrderConfirm = (id: string) => {
   uni.showModal({
     content: '为保障您的权益，请收到货并确认无误后，再确认收货',
+    confirmColor: '#27BA9B',
     success: async (res) => {
       if (res.confirm) {
         await putMemberOrderReceiptByIdAPI(id)
@@ -96,6 +97,7 @@ const onOrderConfirm = (id: string) => {
 const onOrderDelete = (id: string) => {
   uni.showModal({
     content: '你确定要删除该订单？',
+    confirmColor: '#27BA9B',
     success: async (res) => {
       if (res.confirm) {
         await deleteMemberOrderAPI({ ids: [id] })

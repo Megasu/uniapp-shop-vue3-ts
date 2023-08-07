@@ -22,6 +22,7 @@ const onDeleteAddress = (id: string) => {
   // 二次确认
   uni.showModal({
     content: '删除地址?',
+    confirmColor: '#27BA9B',
     success: async (res) => {
       if (res.confirm) {
         // 根据id删除收货地址

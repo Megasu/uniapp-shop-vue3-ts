@@ -7,6 +7,7 @@ const onLogout = () => {
   // 模态弹窗
   uni.showModal({
     content: '是否退出登录？',
+    confirmColor: '#27BA9B',
     success: (res) => {
       if (res.confirm) {
         // 清理用户信息

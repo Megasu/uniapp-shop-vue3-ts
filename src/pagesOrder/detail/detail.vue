@@ -142,6 +142,7 @@ const onOrderConfirm = () => {
   // 二次确认弹窗
   uni.showModal({
     content: '为保障您的权益，请收到货并确认无误后，再确认收货',
+    confirmColor: '#27BA9B',
     success: async (success) => {
       if (success.confirm) {
         const res = await putMemberOrderReceiptByIdAPI(query.id)
@@ -156,6 +157,7 @@ const onOrderDelete = () => {
   // 二次确认
   uni.showModal({
     content: '是否删除订单',
+    confirmColor: '#27BA9B',
     success: async (success) => {
       if (success.confirm) {
         await deleteMemberOrderAPI({ ids: [query.id] })
