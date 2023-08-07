@@ -105,7 +105,7 @@ page {
 
 /* 用户信息 */
 .profile {
-  margin-top: 20rpx;
+  margin-top: 30rpx;
   position: relative;
 
   .overview {

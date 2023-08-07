@@ -230,6 +230,7 @@ const { guessRef, onScrolltolower } = useGuessList()
 // 滚动容器
 .scroll-view {
   flex: 1;
+  background-color: #f7f7f8;
 }
 
 // 购物车列表
