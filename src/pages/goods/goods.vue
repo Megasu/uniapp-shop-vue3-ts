@@ -472,6 +472,11 @@ page {
 
 /* 底部工具栏 */
 .toolbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: calc((var(--window-bottom)));
+  z-index: 1;
   background-color: #fff;
   height: 100rpx;
   padding: 0 20rpx;
@@ -499,10 +504,12 @@ page {
     }
   }
   .icons {
-    padding-right: 10rpx;
+    padding-right: 20rpx;
     display: flex;
     align-items: center;
     flex: 1;
+    // 兼容 H5 端和 App 端的导航链接样式
+    .navigator-wrap,
     .icons-button {
       flex: 1;
       text-align: center;
