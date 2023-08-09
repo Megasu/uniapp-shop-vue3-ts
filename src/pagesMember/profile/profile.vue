@@ -23,6 +23,22 @@ const memberStore = useMemberStore()
 // 修改头像
 const onAvatarChange = () => {
   // 调用拍照/选择图片
+  // 选择图片条件编译
+  // #ifdef H5 || APP-PLUS
+  // 微信小程序从基础库 2.21.0 开始， wx.chooseImage 停止维护，请使用 uni.chooseMedia 代替
+  uni.chooseImage({
+    count: 1,
+    success: (res) => {
+      // 文件路径
+      const tempFilePaths = res.tempFilePaths
+      // 上传
+      uploadFile(tempFilePaths[0])
+    },
+  })
+  // #endif
+
+  // #ifdef MP-WEIXIN
+  // uni.chooseMedia 仅支持微信小程序端
   uni.chooseMedia({
     // 文件个数
     count: 1,
@@ -31,24 +47,31 @@ const onAvatarChange = () => {
     success: (res) => {
       // 本地路径
       const { tempFilePath } = res.tempFiles[0]
-      // 文件上传
-      uni.uploadFile({
-        url: '/member/profile/avatar',
-        name: 'file',
-        filePath: tempFilePath,
-        success: (res) => {
-          if (res.statusCode === 200) {
-            const avatar = JSON.parse(res.data).result.avatar
-            // 个人信息页数据更新
-            profile.value!.avatar = avatar
-            // Store头像更新
-            memberStore.profile!.avatar = avatar
-            uni.showToast({ icon: 'success', title: '更新成功' })
-          } else {
-            uni.showToast({ icon: 'error', title: '出现错误' })
-          }
-        },
-      })
+      // 上传
+      uploadFile(tempFilePath)
+    },
+  })
+  // #endif
+}
+
+// 文件上传-兼容小程序端、H5端、App端
+const uploadFile = (file: string) => {
+  // 文件上传
+  uni.uploadFile({
+    url: '/member/profile/avatar',
+    name: 'file',
+    filePath: file,
+    success: (res) => {
+      if (res.statusCode === 200) {
+        const avatar = JSON.parse(res.data).result.avatar
+        // 个人信息页数据更新
+        profile.value!.avatar = avatar
+        // Store头像更新
+        memberStore.profile!.avatar = avatar
+        uni.showToast({ icon: 'success', title: '更新成功' })
+      } else {
+        uni.showToast({ icon: 'error', title: '出现错误' })
+      }
     },
   })
 }
