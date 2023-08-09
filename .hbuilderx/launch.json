@@ -4,6 +4,9 @@
   "version": "0.0",
   "configurations": [
     {
+      "app-plus": {
+        "launchtype": "local"
+      },
       "default": {
         "launchtype": "local"
       },
@@ -11,6 +14,10 @@
         "launchtype": "local"
       },
       "type": "uniCloud"
+    },
+    {
+      "playground": "standard",
+      "type": "uni-app:app-android"
     }
   ]
 }
