@@ -13,6 +13,9 @@ const profile = ref({} as ProfileDetail)
 const getMemberProfileData = async () => {
   const res = await getMemberProfileAPI()
   profile.value = res.result
+  // 同步 Store 的头像和昵称，用于我的页面展示
+  memberStore.profile!.avatar = res.result.avatar
+  memberStore.profile!.nickname = res.result.nickname
 }
 
 onLoad(() => {
