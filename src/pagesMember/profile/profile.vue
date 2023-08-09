@@ -139,7 +139,7 @@ const onSubmit = async () => {
       <view class="form-content">
         <view class="form-item">
           <text class="label">账号</text>
-          <text class="account">{{ profile?.account }}</text>
+          <text class="account placeholder">{{ profile?.account }}</text>
         </view>
         <view class="form-item">
           <text class="label">昵称</text>
@@ -172,6 +172,8 @@ const onSubmit = async () => {
             <view class="placeholder" v-else>请选择日期</view>
           </picker>
         </view>
+        <!-- 只有微信小程序端内置了省市区数据 -->
+        <!-- #ifdef MP-WEIXIN -->
         <view class="form-item">
           <text class="label">城市</text>
           <picker
@@ -184,6 +186,7 @@ const onSubmit = async () => {
             <view class="placeholder" v-else>请选择城市</view>
           </picker>
         </view>
+        <!-- #endif -->
         <view class="form-item">
           <text class="label">职业</text>
           <input class="input" type="text" placeholder="请填写职业" :value="profile?.profession" />
