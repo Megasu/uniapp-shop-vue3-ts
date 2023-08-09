@@ -68,7 +68,7 @@ const rules: UniHelper.UniFormsRules = {
       { pattern: /^1[3-9]\d{9}$/, errorMessage: '手机号格式不正确' },
     ],
   },
-  fullLocation: {
+  countyCode: {
     rules: [{ required: true, errorMessage: '请选择所在地区' }],
   },
   address: {
@@ -102,6 +102,19 @@ const onSubmit = async () => {
     uni.showToast({ icon: 'error', title: '请填写完整信息' })
   }
 }
+
+// #ifdef H5 || APP-PLUS
+const onCityChange: UniHelper.UniDataPickerOnChange = (ev) => {
+  // 省市区
+  const [province, city, county] = ev.detail.value
+  // 收集后端所需的 code 数据
+  Object.assign(form.value, {
+    provinceCode: province.value,
+    cityCode: city.value,
+    countyCode: county.value,
+  })
+}
+// #endif
 </script>
 
 <template>
@@ -121,8 +134,9 @@ const onSubmit = async () => {
           v-model="form.contact"
         />
       </uni-forms-item>
-      <uni-forms-item name="fullLocation" class="form-item">
+      <uni-forms-item name="countyCode" class="form-item">
         <text class="label">所在地区</text>
+        <!-- #ifdef MP-WEIXIN -->
         <picker
           @change="onRegionChange"
           class="picker"
@@ -132,6 +146,23 @@ const onSubmit = async () => {
           <view v-if="form.fullLocation">{{ form.fullLocation }}</view>
           <view v-else class="placeholder">请选择省/市/区(县)</view>
         </picker>
+        <!-- #endif -->
+
+        <!-- #ifdef H5 || APP-PLUS -->
+        <uni-data-picker
+          placeholder="请选择地址"
+          popup-title="请选择城市"
+          collection="opendb-city-china"
+          field="code as value, name as text"
+          orderby="value asc"
+          :step-searh="true"
+          self-field="code"
+          parent-field="parent_code"
+          @change="onCityChange"
+          :clear-icon="false"
+          v-model="form.countyCode"
+        />
+        <!-- #endif -->
       </uni-forms-item>
       <uni-forms-item name="address" class="form-item">
         <text class="label">详细地址</text>
@@ -153,6 +184,12 @@ const onSubmit = async () => {
 </template>
 
 <style lang="scss">
+// 深度选择器修改 uni-data-picker 组件样式
+:deep(.selected-area) {
+  flex: 0 1 auto;
+  height: auto;
+}
+
 page {
   background-color: #f4f4f4;
 }
