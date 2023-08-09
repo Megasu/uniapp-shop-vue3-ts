@@ -2,6 +2,7 @@
 import { getMemberProfileAPI, putMemberProfileAPI } from '@/services/profile'
 import { useMemberStore } from '@/stores'
 import type { Gender, ProfileDetail } from '@/types/member'
+import { formatDate } from '@/utils'
 import { onLoad } from '@dcloudio/uni-app'
 import { ref } from 'vue'
 
@@ -165,7 +166,7 @@ const onSubmit = async () => {
             class="picker"
             :value="profile?.birthday"
             start="1900-01-01"
-            :end="new Date()"
+            :end="formatDate(new Date())"
           >
             <view v-if="profile?.birthday">{{ profile?.birthday }}</view>
             <view class="placeholder" v-else>请选择日期</view>
