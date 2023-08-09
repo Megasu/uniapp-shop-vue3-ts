@@ -229,7 +229,7 @@ const onBuyNow = (ev: SkuPopupEvent) => {
   </scroll-view>
 
   <!-- 用户操作 -->
-  <view class="toolbar" :style="{ paddingBottom: safeAreaInsets?.bottom + 'px' }">
+  <view v-if="goods" class="toolbar" :style="{ paddingBottom: safeAreaInsets?.bottom + 'px' }">
     <view class="icons">
       <button class="icons-button"><text class="icon-heart"></text>收藏</button>
       <!-- #ifdef MP-WEIXIN -->
