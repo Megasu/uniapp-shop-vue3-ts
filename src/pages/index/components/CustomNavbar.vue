@@ -4,7 +4,7 @@ const { safeAreaInsets } = uni.getSystemInfoSync()
 </script>
 
 <template>
-  <view class="navbar" :style="{ paddingTop: safeAreaInsets?.top + 'px' }">
+  <view class="navbar" :style="{ paddingTop: safeAreaInsets!.top + 10 + 'px' }">
     <!-- logo文字 -->
     <view class="logo">
       <image class="logo-image" src="@/static/images/logo.png"></image>
