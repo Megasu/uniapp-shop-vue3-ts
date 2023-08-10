@@ -2,18 +2,7 @@
   <view is="components/XtxSwiper">
     <view class="carousel XtxSwiper--carousel">
       <swiper :circular="true" :interval="3000" :current="0" :autoplay="false">
-        <swiper-item
-          style="
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            transform: translate(0%, 0px) translateZ(0px);
-          "
-        >
-          <navigator class="navigator XtxSwiper--navigator" hover-class="none">
-            <image class="image XtxSwiper--image sk-image" mode="aspectFill"></image>
-          </navigator>
-        </swiper-item>
+        <!-- App 端控制台未知报错，删除 swiper-item 错误消失？ -->
       </swiper>
       <view class="indicator XtxSwiper--indicator">
         <text class="dot XtxSwiper--dot active XtxSwiper--active"></text>
@@ -146,28 +135,15 @@
       </view>
     </view>
   </view>
-  <view is="components/XtxGuess" class="r">
-    <view class="caption XtxGuess--caption">
-      <text
-        class="text XtxGuess--text sk-transparent sk-text-0-0000-363 sk-text sk-pseudo sk-pseudo-circle"
-        >猜你喜欢</text
-      >
-    </view>
-  </view>
 </template>
 
-<style>
-/* #ifdef H5 */
+<style lang="scss">
+/* #ifdef H5 || APP-PLUS */
 /* 修复 H5 端骨架屏样式异常 */
 /* 原因：H5 端样式自动开启 scoped 隔离，导致骨架屏的基础样式被隔离 */
 @import '../styles/category.scss';
 @import '../styles/hot.scss';
-
-.carousel,
-.carousel .image {
-  height: 280rpx;
-  width: 100%;
-}
+@import '@/components/styles/XtxSwiper.scss';
 /* #endif */
 
 .sk-transparent {
