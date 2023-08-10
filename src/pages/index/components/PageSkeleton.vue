@@ -1,9 +1,7 @@
 <template name="skeleton">
   <view is="components/XtxSwiper">
     <view class="carousel XtxSwiper--carousel">
-      <swiper :circular="true" :interval="3000" :current="0" :autoplay="false">
-        <!-- App 端控制台未知报错，删除 swiper-item 错误消失？ -->
-      </swiper>
+      <!-- App 端控制台未知报错，删除 swiper 错误消失？ -->
       <view class="indicator XtxSwiper--indicator">
         <text class="dot XtxSwiper--dot active XtxSwiper--active"></text>
         <text class="dot XtxSwiper--dot"></text>

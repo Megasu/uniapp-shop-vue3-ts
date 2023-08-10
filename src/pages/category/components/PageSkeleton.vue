@@ -42,32 +42,6 @@
         <scroll-view :scroll-y="true" class="secondary">
           <view is="components/XtxSwiper" class="banner">
             <view class="carousel XtxSwiper--carousel">
-              <swiper :circular="true" :interval="3000" :current="0" :autoplay="false">
-                <swiper-item
-                  style="
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    transform: translate(0%, 0px) translateZ(0px);
-                  "
-                >
-                  <navigator class="navigator XtxSwiper--navigator" hover-class="none">
-                    <image class="image XtxSwiper--image sk-image" mode="aspectFill"></image>
-                  </navigator>
-                </swiper-item>
-                <swiper-item
-                  style="
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    transform: translate(100%, 0px) translateZ(0px);
-                  "
-                >
-                  <navigator class="navigator XtxSwiper--navigator" hover-class="none">
-                    <image class="image XtxSwiper--image sk-image" mode="aspectFill"></image>
-                  </navigator>
-                </swiper-item>
-              </swiper>
               <view class="indicator XtxSwiper--indicator">
                 <text class="dot XtxSwiper--dot active XtxSwiper--active"></text>
                 <text class="dot XtxSwiper--dot"></text>
@@ -187,9 +161,10 @@
   </view>
 </template>
 
-<style>
-/* #ifdef H5 */
+<style lang="scss">
+/* #ifdef H5 || APP-PLUS */
 /* 修复 H5 端骨架屏样式异常 */
+@import '@/components/styles/XtxSwiper.scss';
 @import '../styles/category.scss';
 /* #endif */
 .sk-transparent {
