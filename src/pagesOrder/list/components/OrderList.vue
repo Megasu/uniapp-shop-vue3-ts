@@ -68,6 +68,11 @@ const onOrderPay = async (id: string) => {
     const res = await getPayWxPayMiniPayAPI({ orderId: id })
     await wx.requestPayment(res.result)
     // #endif
+
+    // #ifdef H5 || APP-PLUS
+    // H5端 和 App 端未开通支付-模拟支付体验
+    await getPayMockAPI({ orderId: id })
+    // #endif
   }
   // 成功提示
   uni.showToast({ title: '支付成功' })
