@@ -12,10 +12,12 @@
   <tr>
     <td>体验小程序端</td>
     <td>体验 H5 端</td>
+    <td>体验 App 端(安卓)</td>
   </tr>
   <tr>
     <td><img width="300" src="./README/images/code.png" alt=""></td>
     <td><img width="300" src="./README/images/code-web.png" alt=""></td>
+    <td><img width="300" src="./README/images/code-android.png" alt=""></td>
   </tr>
 </table>
 
