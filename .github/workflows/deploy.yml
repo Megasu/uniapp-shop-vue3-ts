@@ -12,10 +12,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          node-version: 'v16.13.0'
+          node-version: '18.4.0'
       - uses: actions/setup-node@v3
         with:
-          node-version: 'v16.13.0'
+          node-version: '18.4.0'
       - run: pnpm install
       - run: pnpm run build:h5
       - uses: actions/upload-artifact@v3
