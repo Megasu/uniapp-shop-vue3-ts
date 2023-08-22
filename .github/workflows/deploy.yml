@@ -16,8 +16,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '18.4.0'
-      - run: pnpm install
-      - run: pnpm run build:h5
+      - run: yarn install
+      - run: yarn run build:h5
       - uses: actions/upload-artifact@v3
         with:
           path: ./dist/build/h5
