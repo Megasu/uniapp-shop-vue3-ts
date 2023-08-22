@@ -62,7 +62,7 @@
     "@dcloudio/uni-ui": "^1.4.23",
     "pinia": "2.0.27",
     "pinia-plugin-persistedstate": "^3.2.0",
-    "vue": "^3.2.47",
+    "vue": "^3.3.4",
     "vue-i18n": "^9.2.2"
   },
   "devDependencies": {
