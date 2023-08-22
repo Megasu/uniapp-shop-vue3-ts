@@ -49,7 +49,7 @@ jobs:
           # 注意替换为你的 GitHub 源仓库地址
           source-repo: git@github.com:erabbit-dev/erabbit-uni-app.git
           # 注意替换为你的 Gitee 目标仓库地址
-          destination-repo: git@gitee.com:Megasu/uniapp-shop-vue3-ts.git
+          destination-repo: https://gitee.com/Megasu/uniapp-shop-vue3-ts.git
           # dry-run: true
 
       - name: Build Gitee Pages
