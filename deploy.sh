@@ -27,6 +27,6 @@ git commit -m 'deploy: gh-pages'
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
 # git push -f git@gitee.com:<USERNAME>/<REPO>.git master:gh-pages
-git push -f git@github.com:erabbit-dev/erabbit-uni-app.git gh-pages:gh-pages
+git push -f git@github.com:erabbit-dev/erabbit-uni-app.git gh-pages
 
 cd -
