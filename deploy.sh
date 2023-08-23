@@ -21,12 +21,12 @@ cp "./deploy.yml" "./dist/build/h5/.github/workflows/deploy.yml"
 # 如果是发布到自定义域名
 # echo 'www.example.com' > CNAME
 cd dist/build/h5
-git init
+git init -b master
 git add -A
 git commit -m 'deploy: gh-pages'
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
 # git push -f git@gitee.com:<USERNAME>/<REPO>.git master:gh-pages
-git push -f git@github.com:erabbit-dev/erabbit-uni-app.git gh-pages
+git push -f git@github.com:erabbit-dev/erabbit-uni-app.git master:gh-pages
 
 cd -
