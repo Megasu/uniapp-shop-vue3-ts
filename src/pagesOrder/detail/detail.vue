@@ -46,9 +46,8 @@ const query = defineProps<{
 const pages = getCurrentPages()
 
 // 基于小程序的 Page 类型扩展 uni-app 的 Page
-interface PageInstance extends Page.PageInstance {
-  animate: WechatMiniprogram.Page.InstanceMethods<any>['animate']
-}
+type PageInstance = Page.PageInstance & WechatMiniprogram.Page.InstanceMethods<any>
+
 // #ifdef MP-WEIXIN
 // 获取当前页面实例，数组最后一项
 const pageInstance = pages.at(-1) as PageInstance
