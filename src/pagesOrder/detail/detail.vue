@@ -45,22 +45,9 @@ const query = defineProps<{
 // 获取页面栈
 const pages = getCurrentPages()
 
-interface Keyframe {
-  [key: string]: string | number
-}
-interface AnimateOptions {
-  scrollSource: string
-  timeRange: number
-  startScrollOffset: number
-  endScrollOffset: number
-}
+// 基于小程序的 Page 类型扩展 uni-app 的 Page
 interface PageInstance extends Page.PageInstance {
-  animate: (
-    selector: string,
-    keyframes: Keyframe[],
-    duration: number,
-    options?: AnimateOptions,
-  ) => void
+  animate: WechatMiniprogram.Page.InstanceMethods<any>['animate']
 }
 // #ifdef MP-WEIXIN
 // 获取当前页面实例，数组最后一项
