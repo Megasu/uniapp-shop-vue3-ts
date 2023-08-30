@@ -11,8 +11,8 @@
 <table>
   <tr>
     <td>体验小程序端</td>
-    <td>体验 H5 端</td>
-    <td>体验 App 端(安卓)</td>
+    <td><a target="_blank" href="https://megasu.gitee.io/uniapp-shop-vue3-ts/">体验 H5 端</a></td>
+    <td><a target="_blank" href="https://gitee.com/Megasu/uniapp-shop-vue3-ts/releases/download/v1.0.0/heima-shop.apk">体验 App 端(安卓)</a></td>
   </tr>
   <tr>
     <td><img width="300" src="./README/images/code-mp-weixin.png" alt=""></td>
@@ -180,5 +180,5 @@ npm run dev:h5
 ├── index.html                 # H5 端首页
 ├── package.json               # package.json 依赖
 ├── tsconfig.json              # typescript 配置
-└── vite.config.ts             # vue-cli 配置
+└── vite.config.ts             # vite 配置
 ```
