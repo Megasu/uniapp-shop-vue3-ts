@@ -11,7 +11,7 @@
 <table>
   <tr>
     <td>体验小程序端</td>
-    <td><a target="_blank" href="https://megasu.gitee.io/uniapp-shop-vue3-ts/">体验 H5 端</a></td>
+    <td><a target="_blank" href="https://uniapp-shop-vue3-ts.uinav.com/">体验 H5 端</a></td>
     <td><a target="_blank" href="https://gitee.com/Megasu/uniapp-shop-vue3-ts/releases/download/v1.0.0/heima-shop.apk">体验 App 端(安卓)</a></td>
   </tr>
   <tr>
