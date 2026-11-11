@@ -33,7 +33,7 @@
 
 ### ✏️ 在线笔记
 
-[https://megasu.gitee.io/uni-app-shop-note/](https://megasu.gitee.io/uni-app-shop-note/)
+[https://uni-app-shop-note.uinav.com/](https://uni-app-shop-note.uinav.com/)
 
 ### 📦 项目源码
 
